@@ -5,7 +5,7 @@ Author: Kęstutis Gim.
 1. Clone the project;
 2. Install Node.js;
 3. To run backend from /image-scroll-view/backend directory run "npm install" and "npm start";
-4. To run frontend from /image-scroll-view/fronend directroy run "npm install" and "npm start".
+4. To run frontend from /image-scroll-view/fronend directory run "npm install" and "npm start".
 
 ### Ports:
 Backend: 5000;
