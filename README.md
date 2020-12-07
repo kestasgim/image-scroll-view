@@ -6,7 +6,6 @@
 3. From /image-scroll-view/backend directory run "npm install" and "npm start";
 4. From /image-scroll-view/fronend directroy run "npm install" and "npm start".
 
-### Ports
-Backend's is 5000
-
-Frontend's is 3000
+### Ports:
+Backend: 5000
+Frontend: 3000
