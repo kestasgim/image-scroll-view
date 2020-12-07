@@ -8,4 +8,9 @@
 
 .img-title{
   padding: 2vh;
+  font-size: 2vw;
+}
+
+.photo{
+  max-width: 70%;
 }
