@@ -1,4 +1,5 @@
 ## image-scroll-view
+Author: Kęstutis Gim.
 
 ### To run the project you need to:
 1. Clone the project;
