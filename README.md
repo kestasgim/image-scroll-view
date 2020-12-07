@@ -7,5 +7,5 @@
 4. From /image-scroll-view/fronend directroy run "npm install" and "npm start".
 
 ### Ports:
-Backend: 5000
-Frontend: 3000
+Backend: 5000;
+vFrontend: 3000.
