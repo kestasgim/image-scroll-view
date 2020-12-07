@@ -1,0 +1,11 @@
+#photos {
+  width: 90%;
+  max-width: 50rem;
+  margin: 2rem auto;
+}
+
+.photo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
