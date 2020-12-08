@@ -11,8 +11,8 @@ const SearchForm = props => {
   
   return (
     <form className="form-inline">
-      <input className="input is-primary" value={value} onChange={onChange} type="text"/>
-      <button onClick={props.handler} className="button is-primary is-light" type='submit'>
+      <input className="input is-primary" name="search" value={value} onChange={onChange} type="text" placeholder="Flickr"/>
+      <button onClick={(e) => props.handler(e, value)} className="button is-primary is-light" type='submit'>
         Search
       </button>
     </form>

@@ -13,7 +13,7 @@ const Photo = props => {
   const imgSrcSet = `${photoT} 200w, ${photoM} 480w, ${photoN} 640w, ${photoW} 800w`
 
   return (
-    <li key={props.serverId + props.id + props.secret}>
+    <li>
       <div className="img-container">
         <img className="photo" src={photo} alt={props.title} srcSet={imgSrcSet}/> 
         <span className="img-title">{props.title}</span>

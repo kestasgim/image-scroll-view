@@ -11,7 +11,7 @@ const PhotoList = props => {
     content = (
       <ul className="photo-list">
         {props.items.map(p => (
-          <Photo key={p.id} serverId={p.server} id={p.id} secret={p.secret} title={p.title}/>
+          <Photo key={Math.random()+ "-" + p.server +"-"+ p.id +"-"+ p.secret} serverId={p.server} id={p.id} secret={p.secret} title={p.title}/>
         ))}
       </ul>
     );

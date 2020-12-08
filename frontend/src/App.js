@@ -9,44 +9,52 @@ import './App.css';
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
-  const [loadedRecentPhotos, setLoadedRecentPhotos] = useState([]);
-  // const [loadedSearchPhotos, setLoadedPhotos] = useState([]);
-  const [recentPage, setRecentPage] = useState(1);
-  // const [searchPage, setSearchPage] = useState(1);
-  // const [showRecent, setShowRecent] = useState(true);
+  const [loadedPhotos, setLoadedPhotos] = useState([]);
+  const [page, setPage] = useState(1);
+  const [showRecent, setShowRecent] = useState(true);
+  const [search, setSearch] = useState('');
 
 
   useEffect(() => {
     const fetchPhotos = async () => {
       setIsLoading(true);
-      const response = await fetch(`http://localhost:5000/flickr/recent?page=${recentPage}&perPage=10`);
+      const fetchEndPoint = showRecent ? `http://localhost:5000/flickr/recent?page=${page}&perPage=10` :
+      `http://localhost:5000/flickr/search?page=${page}&perPage=10&search=${search}`;
+      const response = await fetch(fetchEndPoint);
 
       const responseData = await response.json();
-      setLoadedRecentPhotos( prevPhotos => {
+      setLoadedPhotos( prevPhotos => {
         return prevPhotos.concat(responseData.photo);
       });
       setIsLoading(false);
     };
 
     fetchPhotos();
-  }, [recentPage]);
+  }, [page, showRecent]);
 
   const handleRecentClick = () => {
     console.log('Recent clicked');
-    //TODO add state logic
-    return;
+    if(page!=1 || !showRecent){
+      setLoadedPhotos([]);
+      setShowRecent(true);
+      setPage(1);
+    }
   }
 
   const handleSearchClick = (e, value) => {
     e.preventDefault();
-    // TODO add state logic
-    console.log('Search clicked', value);
+    if(value && (page!=1 || showRecent)){
+      setLoadedPhotos([]);
+      setSearch(value);
+      setShowRecent(false);
+      setPage(1);
+    }
     return;
   }
 
   window.onscroll = () => {
     if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
-      setRecentPage(recentPage + 1);
+      setPage(page + 1);
     }
   }
 
@@ -57,7 +65,7 @@ function App() {
         <SearchForm handler={handleSearchClick}/>
       </Header> 
       <main>
-        <PhotoList items={loadedRecentPhotos} />
+        <PhotoList items={loadedPhotos} />
         {isLoading && <p className="my-loader">Loading...</p>}
       </main>
     </React.Fragment>

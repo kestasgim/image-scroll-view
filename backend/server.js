@@ -19,7 +19,7 @@ app.use((req, res, next) => {
   );
   next();
 });
-/*
+
 app.get('/flickr/search', (req, res, next) => {
   const per_page = req.query.perPage;
   const page = req.query.page;
@@ -29,12 +29,12 @@ app.get('/flickr/search', (req, res, next) => {
     , page: page
     , per_page: per_page
   }).then(function (fres) {
-    res.status(200).json( fres.body.photos.photo );
+    res.status(200).json( fres.body.photos );
   }).catch(function (err) {
     console.error('ERROR: ', err);
   });
 });
- */
+ 
 app.get('/flickr/recent', (req, res, next) => {
   const per_page = req.query.perPage;
   const page = req.query.page;
