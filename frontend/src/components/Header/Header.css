@@ -7,7 +7,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: #00bbb2;
+  background-image: linear-gradient(to right, #f83d3d , #00bbb2);
+  
 }
 
 .header h1 {

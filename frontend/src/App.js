@@ -14,14 +14,12 @@ function App() {
   const [showRecent, setShowRecent] = useState(true);
   const [search, setSearch] = useState('');
 
-
   useEffect(() => {
     const fetchPhotos = async () => {
       setIsLoading(true);
-      const fetchEndPoint = showRecent ? `http://localhost:5000/flickr/recent?page=${page}&perPage=10` :
-      `http://localhost:5000/flickr/search?page=${page}&perPage=10&search=${search}`;
+      const fetchEndPoint = showRecent ? `http://localhost:5000/flickr/recent?page=${page}&perPage=10`
+          : `http://localhost:5000/flickr/search?page=${page}&perPage=10&search=${search}`;
       const response = await fetch(fetchEndPoint);
-
       const responseData = await response.json();
       setLoadedPhotos( prevPhotos => {
         return prevPhotos.concat(responseData.photo);
