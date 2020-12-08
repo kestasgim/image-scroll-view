@@ -1,0 +1,24 @@
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+input.input{
+  width: 15vw;
+}
+
+input.button {
+  width: 10vw;
+}
+
+
+@media (max-width: 800px) {
+  input.input{
+    width: 20vw;
+  }
+  
+  input.button {
+    width: 15vw;
+  }
+}

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 import Header from './components/Header/Header';
 import PhotoList from './components/Photos/PhotoList';
+import Button from './components/Button/Button';
+import SearchForm from './components/SearchForm/SearchForm'
+
 import './App.css';
 
 function App() {
@@ -9,7 +12,7 @@ function App() {
   const [loadedRecentPhotos, setLoadedRecentPhotos] = useState([]);
   // const [loadedSearchPhotos, setLoadedPhotos] = useState([]);
   const [recentPage, setRecentPage] = useState(1);
-  const [searchPage, setSearchPage] = useState(1);
+  // const [searchPage, setSearchPage] = useState(1);
   // const [showRecent, setShowRecent] = useState(true);
 
 
@@ -37,10 +40,13 @@ function App() {
 
   return (
     <React.Fragment>
-      <Header />
+      <Header>
+        <Button className="recent">Recent</Button>
+        <SearchForm/>
+      </Header> 
       <main>
         <PhotoList items={loadedRecentPhotos} />
-        {isLoading && <p className="loader">Loading...</p>}
+        {isLoading && <p className="my-loader">Loading...</p>}
       </main>
     </React.Fragment>
   );

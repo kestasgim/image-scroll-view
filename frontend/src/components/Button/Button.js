@@ -4,7 +4,7 @@ import './Button.css';
 
 const Button = props => {
   return (
-    <button className="button" type={props.type}>
+    <button className="button is-danger is-light" type={props.type}>
       {props.children}
     </button>
   );

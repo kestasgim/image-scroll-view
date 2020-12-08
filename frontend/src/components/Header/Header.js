@@ -5,7 +5,7 @@ import './Header.css';
 const Header = props => {
   return (
     <header className="header">
-      <h1>Image scroll view</h1>
+      {props.children}
     </header>
   );
 };
