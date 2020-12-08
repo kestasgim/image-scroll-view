@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Photo from './Photo';
+import FlickrPhoto from './FlickrPhoto';
 import './PhotoList.css';
 
 const PhotoList = props => {
@@ -11,7 +11,7 @@ const PhotoList = props => {
     content = (
       <ul className="photo-list">
         {props.items.map(p => (
-          <Photo key={Math.random()+ "-" + p.server +"-"+ p.id +"-"+ p.secret} serverId={p.server} id={p.id} secret={p.secret} title={p.title}/>
+          <FlickrPhoto key={Math.random()+ "-" + p.server +"-"+ p.id +"-"+ p.secret} serverId={p.server} id={p.id} secret={p.secret} title={p.title}/>
         ))}
       </ul>
     );

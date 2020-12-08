@@ -30,11 +30,10 @@ function App() {
     };
 
     fetchPhotos();
-  }, [page, showRecent]);
+  }, [page, showRecent, search]);
 
   const handleRecentClick = () => {
-    console.log('Recent clicked');
-    if(page!=1 || !showRecent){
+    if(page!==1 || !showRecent){
       setLoadedPhotos([]);
       setShowRecent(true);
       setPage(1);
@@ -43,7 +42,7 @@ function App() {
 
   const handleSearchClick = (e, value) => {
     e.preventDefault();
-    if(value && (page!=1 || showRecent)){
+    if(value && (page!==1 || showRecent)){
       setLoadedPhotos([]);
       setSearch(value);
       setShowRecent(false);
@@ -61,8 +60,8 @@ function App() {
   return (
     <React.Fragment>
       <Header>
-        <Button handler={handleRecentClick} className="recent">Recent</Button>
-        <SearchForm handler={handleSearchClick}/>
+        <Button handler={handleRecentClick} className="recent" text="Recent"/>
+        <SearchForm handler={handleSearchClick} buttonText="Search"/>
       </Header> 
       <main>
         <PhotoList items={loadedPhotos} />

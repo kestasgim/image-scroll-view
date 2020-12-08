@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './Photo.css';
+import './FlickrPhoto.css';
 
-const Photo = props => {
+const FlickrPhoto = props => {
   //https://live.staticflickr.com/{server-id}/{id}_{secret}.jpg
   const photo = `https://live.staticflickr.com/${props.serverId}/${props.id}_${props.secret}.jpg`;
   //https://live.staticflickr.com/{server-id}/{id}_{secret}_{size-suffix}.jpg t-100 m-240 n-320 w-400
@@ -15,11 +15,11 @@ const Photo = props => {
   return (
     <li>
       <div className="img-container">
-        <img className="photo" src={photo} alt={props.title} srcSet={imgSrcSet}/> 
+        <img className="flickr-photo" src={photo} alt={props.title} srcSet={imgSrcSet}/> 
         <span className="img-title">{props.title}</span>
       </div>
     </li>
   );
 };
 
-export default Photo;
+export default FlickrPhoto;
