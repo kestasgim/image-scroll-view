@@ -12,7 +12,9 @@ const SearchForm = props => {
   return (
     <form className="form-inline">
       <input className="input is-primary" value={value} onChange={onChange} type="text"/>
-      <input className="button is-primary is-light" type='submit' value="Search"/>
+      <button onClick={props.handler} className="button is-primary is-light" type='submit'>
+        Search
+      </button>
     </form>
   );
 };

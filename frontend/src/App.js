@@ -31,6 +31,18 @@ function App() {
     fetchPhotos();
   }, [recentPage]);
 
+  const handleRecentClick = () => {
+    console.log('Recent clicked');
+    //TODO add state logic
+    return;
+  }
+
+  const handleSearchClick = (e, value) => {
+    e.preventDefault();
+    // TODO add state logic
+    console.log('Search clicked', value);
+    return;
+  }
 
   window.onscroll = () => {
     if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
@@ -41,8 +53,8 @@ function App() {
   return (
     <React.Fragment>
       <Header>
-        <Button className="recent">Recent</Button>
-        <SearchForm/>
+        <Button handler={handleRecentClick} className="recent">Recent</Button>
+        <SearchForm handler={handleSearchClick}/>
       </Header> 
       <main>
         <PhotoList items={loadedRecentPhotos} />

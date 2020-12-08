@@ -15,8 +15,7 @@ const Photo = props => {
   return (
     <li>
       <div className="img-container">
-        <img className="photo" src={photo} alt={props.title} srcset={imgSrcSet}
-            /> 
+        <img className="photo" src={photo} alt={props.title} srcSet={imgSrcSet}/> 
         <span className="img-title">{props.title}</span>
       </div>
     </li>
