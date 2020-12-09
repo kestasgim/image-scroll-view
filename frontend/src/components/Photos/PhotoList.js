@@ -6,7 +6,7 @@ import './PhotoList.css';
 const PhotoList = props => {
   let content;
   if (!props.items || props.items.length === 0) {
-    content = <p>Could not find any Photos.</p>;
+    content = <p className="nothing-found">Could not find any Photos.</p>;
   } else {
     content = (
       <ul className="photo-list">

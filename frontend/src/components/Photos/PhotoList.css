@@ -9,3 +9,8 @@
   margin: 0;
   padding: 0;
 }
+
+.nothing-found{
+  text-align: center;
+  font-size: 3vw;
+}
