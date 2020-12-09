@@ -53,6 +53,13 @@ function App() {
     }
   }
 
+  let content;
+  if ((!loadedPhotos || loadedPhotos.length === 0) && !isLoading) {
+    content = <p className="nothing-found">Could not find any Photos.</p>;
+  }else{
+    content = <PhotoList items={loadedPhotos} />;
+  }
+
   return (
     <React.Fragment>
       <Header>
@@ -60,7 +67,7 @@ function App() {
         <SearchForm handler={handleSearchClick} buttonText="Search"/>
       </Header> 
       <main>
-        <PhotoList items={loadedPhotos} />
+        {content}
         {isLoading && <p className="my-loader">Loading...</p>}
       </main>
     </React.Fragment>
