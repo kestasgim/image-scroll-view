@@ -10,8 +10,8 @@ const PhotoList = props => {
   } else {
     content = (
       <ul className="photo-list">
-        {props.items.map(p => (
-          <FlickrPhoto key={Math.random()+ "-" + p.server +"-"+ p.id +"-"+ p.secret} serverId={p.server} id={p.id} secret={p.secret} title={p.title}/>
+        {props.items.map((p, i) => (
+          <FlickrPhoto key={""+ i + "-" + p.server +"-"+ p.id +"-"+ p.secret} serverId={p.server} id={p.id} secret={p.secret} title={p.title}/>
         ))}
       </ul>
     );
