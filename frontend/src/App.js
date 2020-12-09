@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import PhotoList from './components/Photos/PhotoList';
 import Button from './components/Button/Button';
-import SearchForm from './components/SearchForm/SearchForm'
+import SearchForm from './components/SearchForm/SearchForm';
 
 import './App.css';
 
