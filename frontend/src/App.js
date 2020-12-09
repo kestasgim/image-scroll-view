@@ -40,7 +40,7 @@ function App() {
 
   const handleSearchClick = (e, value) => {
     e.preventDefault();
-    if(value && (page!==1 || showRecent)){
+    if((value && (page!==1 || showRecent)) || value!==search){
       setLoadedPhotos([]);
       setSearch(value);
       setShowRecent(false);
