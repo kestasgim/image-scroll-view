@@ -2,7 +2,6 @@ button {
   width: 10vw;
 }
 
-
 @media (max-width: 800px) {
   button {
     width: 20vw;

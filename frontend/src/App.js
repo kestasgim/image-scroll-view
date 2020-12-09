@@ -46,7 +46,6 @@ function App() {
       setShowRecent(false);
       setPage(1);
     }
-    return;
   }
 
   window.onscroll = () => {
