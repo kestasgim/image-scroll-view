@@ -26,7 +26,6 @@ function App() {
       });
       setIsLoading(false);
     };
-
     fetchPhotos();
   }, [page, showRecent, search]);
 
@@ -49,7 +48,7 @@ function App() {
   }
 
   window.onscroll = () => {
-    if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
+    if ((window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) && !isLoading) {
       setPage(page + 1);
     }
   }
