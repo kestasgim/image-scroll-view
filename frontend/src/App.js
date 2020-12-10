@@ -7,6 +7,12 @@ import SearchForm from './components/SearchForm/SearchForm';
 
 import './App.css';
 
+  // TODO try no react-create-app
+  // TODO try typescript
+  // TODO look into applications of useMemo, useCallback, useReducer in this app
+  // TODO fix photos rerender
+  // TODO better styling
+
 function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [loadedPhotos, setLoadedPhotos] = useState([]);
@@ -39,7 +45,7 @@ function App() {
 
   const handleSearchClick = (e, value) => {
     e.preventDefault();
-    if((value && (page!==1 || showRecent)) || value!==search){
+    if(value && (page!==1 || showRecent || value!==search)){
       setLoadedPhotos([]);
       setSearch(value);
       setShowRecent(false);
